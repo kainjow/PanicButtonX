@@ -52,7 +52,7 @@
 	[op setAllowedFileTypes:[NSArray arrayWithObject:@"scpt"]];
 	[op beginSheetModalForWindow:[self window] completionHandler:^(NSInteger result){
 		if (result == NSFileHandlingPanelOKButton) {
-			[[NSUserDefaults standardUserDefaults] setObject:[op filename] forKey:PrefsKeyAppleScriptPath];
+			[[NSUserDefaults standardUserDefaults] setObject:[[op URL] path] forKey:PrefsKeyAppleScriptPath];
 			[[NSUserDefaults standardUserDefaults] setBool:YES forKey:PrefsKeyRunAppleScript];
 		};
 	}];
